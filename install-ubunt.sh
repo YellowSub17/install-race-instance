@@ -3,14 +3,32 @@
 sudo apt update -y
 sudo apt upgrade -y
 
-cp ~/install-race-instance/zshrc .zshrc
+
+
 cp ~/install-race-instance/vimrc .vimrc
+vim
+
+
+sudo apt install cmake
+python3 ~/.vim/plugged/YouCompleteMe/install.py
+
+
+
+sudo apt install zsh -y
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+
+cp ~/install-race-instance/zshrc .zshrc
+
+
+echo 'PROMPT="%{$fg_bold[yellow]%}%{RACEhub%}:%{$fg_bold[red]%} %3~%{$reset_color%}
+%(!.#.$) "' >> .zshrc
 
 
 
 
-
-
+#####Junk
 
 #echo "####"
 #echo "####Installing ZSH"
