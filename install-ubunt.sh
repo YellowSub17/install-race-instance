@@ -1,4 +1,5 @@
 
+
 if [ $(whoami) != 'ec2-user' ]
 then
     echo "Error: only users name 'ec2-user' can run this script"
@@ -6,8 +7,8 @@ then
 fi
 
 
-sudo apt update -y
-sudo apt upgrade -y
+sudo apt update
+sudo apt upgrade
 
 
 
@@ -15,7 +16,7 @@ cp ~/install-race-instance/vimrc .vimrc
 vim
 
 
-sudo apt install cmake
+sudo apt install cmake -y
 python3 ~/.vim/plugged/YouCompleteMe/install.py
 
 
