@@ -33,7 +33,6 @@ source ~/.zshrc
 
 
 ##CRYSTFEL
-
 git clone https://gitlab.desy.de/thomas.white/crystf://gitlab.desy.de/thomas.white/crystfel
 sudo apt install -y build-essential libhdf5-dev libgsl-dev \
                  libgtk-3-dev libcairo2-dev libpango1.0-dev \
@@ -48,31 +47,6 @@ cd ~/crystfel
 ninja -C build
 sudo ldconfig
 rm -rf ~/meson-1.0.2*
-
-
-##p11data
-
-sudo apt install sshpass -y
-echo "Maxwellpass? " 
-read pass
-
-echo "$pass" > ~/pass 
-maxwell='max-display3.desy.de'
-desyuser='patricka'
-p11datapath='/asap3/petra3/gpfs/p11/2022/data/11014376/scratch_cc/pat/crystfel_calc'
-
-
-rm -rf ~/p11data
-mkdir ~/p11data
-
-for i in {11..24};
-do
-    mkdir ~/p11data/$i
-    sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$i/pk8_thr5_snr5/stderr-64.log ~/p11data/$i/stderr-64.log
-done
-rm ~/pass
-
-
 
 #####Junk
 
