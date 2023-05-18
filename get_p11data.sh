@@ -8,12 +8,12 @@ fi
 
 ##p11data
 
-sudo apt install sshpass -y
-echo "Maxwellpass? " 
-read pass
-clear
+#sudo apt install sshpass -y
+#echo "Maxwellpass? " 
+#read pass
+#clear
 
-echo "$pass" > ~/pass 
+echo "$1" > ~/pass 
 maxwell='max-display3.desy.de'
 desyuser='patricka'
 p11datapath='/asap3/petra3/gpfs/p11/2022/data/11014376/scratch_cc/pat/crystfel_calc'
