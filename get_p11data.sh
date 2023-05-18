@@ -11,6 +11,7 @@ fi
 sudo apt install sshpass -y
 echo "Maxwellpass? " 
 read pass
+clear
 
 echo "$pass" > ~/pass 
 maxwell='max-display3.desy.de'
@@ -21,15 +22,15 @@ p11datapath='/asap3/petra3/gpfs/p11/2022/data/11014376/scratch_cc/pat/crystfel_c
 rm -rf ~/p11data
 mkdir ~/p11data
 
-#for run in {11..24};
 for run in {11..12};
 do
     mkdir ~/p11data/$run
-    for i in {0..2};
+
+    printf "$(date +"%T") :: Downloading run $run.\n"
+    for i in {0..1};
     do
-        printf "Downloading run $run stream $i..."
+        printf "stream $i\r"
         sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
-        printf "Done.\n"
     done
 done
 
