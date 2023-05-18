@@ -25,7 +25,7 @@ mkdir ~/p11data
 for run in {11..12};
 do
     mkdir ~/p11data/$run
-    for i in {0..99};
+    for i in {0..2};
     do
         printf "Downloading run $run stream $i..."
         sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
