@@ -27,7 +27,7 @@ do
     mkdir ~/p11data/$run
     for i in {0..99};
     do
-        log=$(sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream)
+        log=$(sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream 2>&1)
         echo "$log"
     done
 done
