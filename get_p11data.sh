@@ -22,17 +22,31 @@ p11datapath='/asap3/petra3/gpfs/p11/2022/data/11014376/scratch_cc/pat/crystfel_c
 rm -rf ~/p11data
 mkdir ~/p11data
 
-for run in {11..12};
+for run in {11..24};
 do
     mkdir ~/p11data/$run
 
-    printf "$(date +"%T") :: Downloading run $run.\n"
+    printf "$(TZ='Australia/Melbourne' date +"%T")    Downloading run $run.\n"
     for i in {0..1};
     do
         printf "stream $i\r"
         sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
     done
 done
+
+for run in {40..60};
+do
+    mkdir ~/p11data/$run
+
+    printf "$(TZ='Australia/Melbourne' date +"%T")    Downloading run $run.\n"
+    for i in {0..1};
+    do
+        printf "stream $i\r"
+        sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
+    done
+done
+
+
 
 unset pass
 rm ~/pass
