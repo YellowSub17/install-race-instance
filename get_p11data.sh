@@ -13,7 +13,6 @@ fi
 #read pass
 #clear
 
-echo "$1" > ~/pass 
 maxwell='max-display3.desy.de'
 desyuser='patricka'
 p11datapath='/asap3/petra3/gpfs/p11/2022/data/11014376/scratch_cc/pat/crystfel_calc'
@@ -30,7 +29,7 @@ do
     for i in {0..99};
     do
         printf "stream $i\r"
-        sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
+        sshpass -p $1 scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
     done
 done
 
@@ -48,8 +47,6 @@ done
 
 
 
-unset pass
-rm ~/pass
 
 
 
