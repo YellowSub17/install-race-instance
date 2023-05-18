@@ -27,7 +27,7 @@ do
     mkdir ~/p11data/$run
 
     printf "$(TZ='Australia/Melbourne' date +"%T")    Downloading run $run.\n"
-    for i in {0..1};
+    for i in {0..99};
     do
         printf "stream $i\r"
         sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
@@ -39,7 +39,7 @@ do
     mkdir ~/p11data/$run
 
     printf "$(TZ='Australia/Melbourne' date +"%T")    Downloading run $run.\n"
-    for i in {0..1};
+    for i in {0..99};
     do
         printf "stream $i\r"
         sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
