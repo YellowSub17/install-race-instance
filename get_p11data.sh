@@ -22,9 +22,9 @@ p11datapath='/asap3/petra3/gpfs/p11/2022/data/11014376/scratch_cc/pat/crystfel_c
 #mkdir ~/p11data
 
 
-lot1start = $(echo "16 + $2" | bc)
+lot1start=$(echo "16 + $2" | bc)
 
-lot2start = $(echo "40 + $2" | bc)
+lot2start=$(echo "40 + $2" | bc)
 
 echo "$lot1start"
 echo "$lot2start"
