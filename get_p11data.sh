@@ -28,7 +28,7 @@ lot2start=$(echo "40 + $2" | bc)
 
 
 
-for run in $(seq $lot1start 4 24);
+for run in $(seq $lot1start 8 24);
 do
     mkdir ~/p11data/$run
 
@@ -40,7 +40,7 @@ do
     done
 done
 
-for run in $(seq $lot2start 4 60);
+for run in $(seq $lot2start 8 60);
 do
     mkdir ~/p11data/$run
 
