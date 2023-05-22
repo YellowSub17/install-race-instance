@@ -26,6 +26,9 @@ lot1start = $(echo "16 + $2" | bc)
 
 lot2start = $(echo "40 + $2" | bc)
 
+echo "$lot1start"
+echo "$lot2start"
+
 
 
 for run in $(seq $lot1start 4 24);
