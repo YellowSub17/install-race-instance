@@ -18,10 +18,17 @@ desyuser='patricka'
 p11datapath='/asap3/petra3/gpfs/p11/2022/data/11014376/scratch_cc/pat/crystfel_calc'
 
 
-rm -rf ~/p11data
-mkdir ~/p11data
+#rm -rf ~/p11data
+#mkdir ~/p11data
 
-for run in {11..24};
+
+lot1start = $(echo "16 + $2" | bc)
+
+lot2start = $(echo "40 + $2" | bc)
+
+
+
+for run in $(seq $lot1start 4 24);
 do
     mkdir ~/p11data/$run
 
@@ -29,11 +36,11 @@ do
     for i in {0..99};
     do
         printf "stream $i\r"
-        sshpass -p $1 scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
+        #sshpass -p $1 scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
     done
 done
 
-for run in {40..60};
+for run in $(seq $lot2start 4 60);
 do
     mkdir ~/p11data/$run
 
@@ -41,7 +48,7 @@ do
     for i in {0..99};
     do
         printf "stream $i\r"
-        sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
+        #sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
     done
 done
 
