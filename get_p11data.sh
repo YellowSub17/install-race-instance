@@ -26,9 +26,6 @@ lot1start=$(echo "16 + $2" | bc)
 
 lot2start=$(echo "40 + $2" | bc)
 
-echo "$lot1start"
-echo "$lot2start"
-
 
 
 for run in $(seq $lot1start 4 24);
@@ -39,7 +36,7 @@ do
     for i in {0..99};
     do
         printf "stream $i\r"
-        #sshpass -p $1 scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
+        sshpass -p $1 scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
     done
 done
 
@@ -51,7 +48,7 @@ do
     for i in {0..99};
     do
         printf "stream $i\r"
-        #sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
+        sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
     done
 done
 
