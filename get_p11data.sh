@@ -48,7 +48,7 @@ do
     for i in {0..99};
     do
         printf "stream $i\r"
-        sshpass -f ~/pass scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
+        sshpass -p $1 scp $desyuser@$maxwell:$p11datapath/$run/pk8_thr5_snr5/crystfel-$i.stream ~/p11data/$run/crystfel-$i.stream
     done
 done
 
