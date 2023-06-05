@@ -1,7 +1,6 @@
 
 
 
-git clone https://github.com/YellowSub17/install-race-instance.git
 
 if [ $(whoami) != 'ec2-user' ]
 then
@@ -30,77 +29,5 @@ echo 'PROMPT="%{$fg_bold[yellow]%}%{RACEhub%}:%{$fg_bold[red]%} %3~%{$reset_colo
 %(!.#.$) "' >> ~/.zshrc
 source ~/.zshrc
 
-
-
-##CRYSTFEL
-git clone https://gitlab.desy.de/thomas.white/crystf://gitlab.desy.de/thomas.white/crystfel
-sudo apt install -y build-essential libhdf5-dev libgsl-dev \
-                 libgtk-3-dev libcairo2-dev libpango1.0-dev \
-                 libgdk-pixbuf2.0-dev libfftw3-dev \
-                 git flex bison libzmq3-dev libmsgpack-dev \
-                 libeigen3-dev libccp4-dev \
-                 ninja-build python3
-https://github.com/mesonbuild/meson/releases/download/1.0.2/meson-1.0.2.tar.gz
-tar -xzf ~/meson-1.0.2.tar.gz
-cd ~/crystfel
-~/meson-1.0.2/meson.py build
-ninja -C build
-sudo ldconfig
-rm -rf ~/meson-1.0.2*
-
-#####Junk
-
-#echo "####"
-#echo "####Installing ZSH"
-#echo "####"
-#sleep 2
-#sudo apt install util-linux-user -y
-#sudo apt install zsh -y 
-#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-
-#echo "####"
-#echo "####Copying RC files"
-#echo "####"
-#sleep 2
-#rm ~/.zshrc
-#rm ~/.vimrc
-
-
-
-#echo "####"
-#echo "####Github Auth"
-#echo "####"
-#sleep 2
-#git config --global init.defaultBranch main
-#git config --global user.name "YellowSub17"
-#git config --global user.email "patrick_aust@hotmail.com"
-#git config --global credential.helper store
-
-
-
-##type -p apt-config-manager >/dev/null || sudo apt install apt-utils
-##sudo apt-config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-#sudo apt install gh -y
-#gh auth login
-#echo "####"
-#echo "####Install Anaconda"
-#echo "####"
-#sleep 2
-##sudo yum install libXcomposite libXcursor libXi libXtst libXrandr alsa-lib mesa-libEGL libXdamage mesa-libGL libXScrnSaver
-#wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
-#bash Anaconda3-2023.03-1-Linux-x86_64.sh
-#source ~/anaconda3/bin/activate
-#conda init
-#rm Anaconda3-2023.03-1-Linux-x86_64.sh
-
-
-
-
-#echo "####"
-#echo "####Install Crystfel"
-#echo "####"
-#sleep 2
-#git clone https://gitlab.desy.de/thomas.white/crystfel.git
 
 
