@@ -7,6 +7,6 @@ Start by grabbing this repo.
     
 If you are on ubuntu, run the install-ubuntu script.
 
-    ~/install-race-instance/install-ubuntu.sh
+    ~/install-race-instance/ubuntu-install.sh
 
 
