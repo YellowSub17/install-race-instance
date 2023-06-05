@@ -37,7 +37,7 @@ call plug#begin()
 
     "file tree
     Plug 'preservim/nerdtree'
-    Plug 'skammer/vim-css-color'
+
 
 "Duane's Addons    
     "sensible shortcuts
@@ -49,12 +49,7 @@ call plug#begin()
     "python indenting
     Plug 'vim-scripts/indentpython.vim'
 
-    "Plug 'rakr/vim-one'   " tell Vim to load the theme/plugin
 
-    "Plug 'vim-scripts/colorsupport.vim'
-
-    "html editing
-    Plug 'mattn/emmet-vim'
 call plug#end()
 
 
@@ -67,7 +62,6 @@ call plug#end()
 "___________________
 
 
-      "\ 'colorscheme': 'onedark',
 
 "lightlight settings
 let g:lightline = {
