@@ -9,8 +9,8 @@ then
 fi
 
 
-sudo apt update
-sudo apt upgrade
+sudo apt update -y
+sudo apt upgrade -y
 
 
 
@@ -28,6 +28,10 @@ cp ~/install-race-instance/zshrc ~/.zshrc
 echo 'PROMPT="%{$fg_bold[yellow]%}%{RACEhub%}:%{$fg_bold[red]%} %3~%{$reset_color%}
 %(!.#.$) "' >> ~/.zshrc
 source ~/.zshrc
+
+
+mkdir ~/bin
+mkdir ~/downloads
 
 
 

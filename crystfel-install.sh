@@ -1,6 +1,10 @@
 
 ##CRYSTFEL
+cd ~/downloads
+
 git clone https://gitlab.desy.de/thomas.white/crystfel
+wget https://github.com/mesonbuild/meson/releases/download/1.0.2/meson-1.0.2.tar.gz
+
 
 sudo apt install -y build-essential libhdf5-dev libgsl-dev \
                  libgtk-3-dev libcairo2-dev libpango1.0-dev \
@@ -9,12 +13,14 @@ sudo apt install -y build-essential libhdf5-dev libgsl-dev \
                  libeigen3-dev libccp4-dev \
                  ninja-build python3
 
-https://github.com/mesonbuild/meson/releases/download/1.0.2/meson-1.0.2.tar.gz
-tar -xzf ~/meson-1.0.2.tar.gz
-cd ~/crystfel
+
+
+tar -xzf ~/downloads/meson-1.0.2.tar.gz
+cd ~/downloads/crystfel
 git checkout 0.10.2
-~/meson-1.0.2/meson.py build
+
+~/downloads/meson-1.0.2/meson.py build
 ninja -C build
 sudo ldconfig
-rm -rf ~/meson-1.0.2*
+rm -rf ~/downloads/meson-1.0.2*
 
