@@ -24,3 +24,7 @@ ninja -C build
 sudo ldconfig
 rm -rf ~/downloads/meson-1.0.2*
 
+cd ~/bin
+ln -s ~/downloads/crystfel/build/pattern_sim pattern_sim
+ln -s ~/downloads/crystfel/build/crystfel crystfel
+
