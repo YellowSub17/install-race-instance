@@ -1,4 +1,14 @@
 
+
+
+
+if [ $(whoami) != 'ec2-user' ]
+then
+    echo "Error: only users name 'ec2-user' can run this script"
+    exit 1
+fi
+
+
 ##CRYSTFEL
 cd ~/downloads
 
