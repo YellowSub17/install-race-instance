@@ -8,6 +8,9 @@ then
     exit 1
 fi
 
+mkdir ~/bin
+mkdir ~/downloads
+
 
 sudo apt update -y
 sudo apt upgrade -y
@@ -30,8 +33,14 @@ echo 'PROMPT="%{$fg_bold[yellow]%}%{RACEhub%}:%{$fg_bold[red]%} %3~%{$reset_colo
 source ~/.zshrc
 
 
-mkdir ~/bin
-mkdir ~/downloads
 
 
+###GIT
+git config --global init.defaultBranch main
+git config --global user.name "YellowSub17"
+git config --global user.email "patrick_aust@hotmail.com"
+git config --global credential.helper store
+
+sudo apt install gh -y
+gh auth login
 
